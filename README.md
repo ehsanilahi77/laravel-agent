@@ -1,58 +1,184 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🤖⚡ Laravel AI CLI Chat (OpenRouter Powered)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <b>A lightweight, blazing-fast AI assistant inside your terminal</b><br>
+  Built with Laravel + OpenRouter API — no UI, just pure productivity.
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://laravel.com">
+    <img src="https://img.shields.io/badge/Laravel-12.x%20%7C%2013.x-red?logo=laravel&style=for-the-badge" />
+  </a>
+  <a href="https://www.php.net">
+    <img src="https://img.shields.io/badge/PHP-8.4%2B-blue?logo=php&style=for-the-badge" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
+  </a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" />
+  <img src="https://img.shields.io/badge/CLI-Focused-black?style=flat-square" />
+  <img src="https://img.shields.io/badge/AI-OpenRouter-purple?style=flat-square" />
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### ✨ Why this exists
 
-## Learning Laravel
+> Bring AI directly into your terminal — fast, minimal, and distraction-free.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Instead of switching tabs or using heavy interfaces, just type:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+php artisan chat
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## ✨ Features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* ⚡ CLI-based AI chat
+* 🤖 Powered by OpenRouter (supports multiple models)
+* ⏳ Built-in “Thinking...” spinner for better UX
+* 🧼 Clean Laravel service-based architecture
+* 🔐 Secure API key via `.env`
+* 🧩 Easy to extend and customize
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📦 Requirements
 
-## Security Vulnerabilities
+* PHP 8.4+
+* Laravel 12 or 13
+* OpenRouter API key
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🚀 Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Clone your project:
+
+```bash
+git clone https://github.com/ehsanilahi77/laravel-agent.git
+cd laravel-agent
+```
+
+Install dependencies:
+
+```bash
+composer install
+```
+
+---
+
+## 🔑 Environment Setup
+
+Add your OpenRouter credentials in `.env`:
+
+```env
+OPENAI_API_KEY=your-openrouter-api-key
+OPENAI_URL=https://openrouter.ai/api/v1/chat/completions
+OPENAI_MODEL=openai/gpt-oss-20b
+```
+
+---
+
+## ⚙️ Configuration
+
+Ensure your `config/services.php` includes:
+
+```php
+'openai' => [
+    'key' => env('OPENAI_API_KEY'),
+    'url' => env('OPENAI_URL', 'https://openrouter.ai/api/v1/chat/completions'),
+    'model' => env('OPENAI_MODEL', 'openai/gpt-oss-20b'),
+],
+```
+
+---
+
+## 💬 Usage
+
+Run the CLI chat command:
+
+```bash
+php artisan chat
+```
+
+Example interaction:
+
+```
+Ask something: What is Laravel?
+
+Thinking...
+
+AI:
+Laravel is a PHP framework designed for building modern web applications...
+```
+
+---
+
+## 🧠 How It Works
+
+* User enters a prompt in CLI
+* Command triggers OpenRouter API request
+* Response is streamed internally (handled cleanly)
+* Output is displayed after processing
+* Spinner shows **“Thinking...”** during request
+
+---
+
+## 🏗️ Architecture
+
+```
+app/
+ ├── Console/Commands/ChatCommand.php
+ └── Services/OpenRouterService.php
+```
+
+### Flow
+
+```
+Command → Service → OpenRouter API → Response → CLI Output
+```
+
+Clean separation of concerns:
+
+* Command = UI layer
+* Service = API logic
+
+---
+
+## 🔧 Customization
+
+### Change AI Model
+
+```env
+OPENAI_MODEL=anthropic/claude-3-sonnet
+```
+
+### Adjust token limit
+
+In service:
+
+```php
+'max_tokens' => 200,
+```
+
+---
+
+## 🧪 Example Models (OpenRouter)
+
+* openai/gpt-oss-20b
+* openai/gpt-4o-mini
+* anthropic/claude-3-sonnet
+* meta-llama/llama-3-70b
+---
+
+## 📄 License
+
+MIT License — feel free to use and modify.
+
+---
