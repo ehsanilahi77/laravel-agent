@@ -172,6 +172,7 @@ In service:
 ## 🧪 Example Models (OpenRouter)
 
 * openai/gpt-oss-20b
+* openai/gpt-oss-120b
 * openai/gpt-4o-mini
 * anthropic/claude-3-sonnet
 * meta-llama/llama-3-70b
