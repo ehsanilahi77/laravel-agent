@@ -175,7 +175,6 @@ In service:
 * openai/gpt-oss-120b
 * openai/gpt-4o-mini
 * anthropic/claude-3-sonnet
-* meta-llama/llama-3-70b
 ---
 
 ## 📄 License
