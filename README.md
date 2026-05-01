@@ -179,6 +179,6 @@ In service:
 
 ## 📄 License
 
-MIT License — feel free to use and modify as you see fit.
+MIT License — feel free to use and modify.
 
 ---
