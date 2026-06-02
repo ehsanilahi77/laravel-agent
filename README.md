@@ -4,6 +4,7 @@
   <b>A lightweight, blazing-fast AI assistant inside your terminal</b><br>
   Built with Laravel + OpenRouter API — no UI, just pure productivity.
 </p>
+<img width="1536" height="1024" alt="chat-app" src="https://github.com/user-attachments/assets/a4db0208-f9af-4ac9-ac20-a74203ac2ce8" />
 
 <p align="center">
   <a href="https://laravel.com">
